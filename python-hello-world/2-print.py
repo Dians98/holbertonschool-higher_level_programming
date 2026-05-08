@@ -1,5 +1,3 @@
 #!/usr/bin/python3
 
-name = "Diano"
-
-print("Hello ", name)
+print('"Programming is like building a multilingual puzzle /n')
