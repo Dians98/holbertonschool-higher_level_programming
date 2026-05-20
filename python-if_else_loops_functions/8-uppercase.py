@@ -5,4 +5,4 @@ def uppercase(str):
                           if 97 <= ord(char) <= 122
               else
               "{}".format(char)
-                          ))
+                          ), end="")
