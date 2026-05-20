@@ -1,3 +1,3 @@
 def add(a, b):
-    sum = a + b
+    sum = int(a) + int(b)
     return sum
