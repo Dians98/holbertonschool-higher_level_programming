@@ -4,7 +4,4 @@ def uppercase(str):
     for char in str:
         complete_str += char.capitalize()
 
-    return print(complete_str)
-
-
-uppercase("test")
+    return complete_str
