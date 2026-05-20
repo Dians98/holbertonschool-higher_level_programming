@@ -1,8 +1,6 @@
 #!/usr/bin/python3
-def islower(char):
-    if ord(char) < ord('a') or ord(char) > ord('z'):
-        raise TypeError("{} is not a letter".format(char))
-    return True
+def islower(c):
+    return True if ord(c) >= 97 and ord(c) <= 122 else False
 
 
 print("a is {}".format("lower" if islower("a") else "upper"))
