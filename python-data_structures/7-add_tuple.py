@@ -6,4 +6,4 @@ def add_tuple(tuple_a=(), tuple_b=()):
 
     a_plus_b = tuple(((t1[i] if i < t1_len else 0) + (t2[i] if i < t2_len else 0))
                      for i in range(2))
-    print("{}".format(a_plus_b))
+    return a_plus_b
