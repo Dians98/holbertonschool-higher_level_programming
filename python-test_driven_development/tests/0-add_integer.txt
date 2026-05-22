@@ -1,15 +1,22 @@
-import sys
-import os
-import importlib.util
-import unittest
+# tests/0-add_integer.txt
 
-# 1. Ajouter le dossier parent au path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
+>>> add_integer = __import__('0-add_integer').add_integer
 
-# 2. Charger le fichier manuellement
-spec = importlib.util.spec_from_file_location(
-    "add_integer",  # nom qu'on lui donne
-    os.path.join(os.path.dirname(__file__), '..', '0-add_integer.py')
-)
-module = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(module)
+>>> add_integer(2, 3)
+5
+
+>>> add_integer(2)
+100
+
+>>> add_integer(2.5, 3.1)
+5
+
+>>> add_integer("hello", 3)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+>>> add_integer(2, "hello")
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
