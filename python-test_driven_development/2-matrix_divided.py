@@ -24,7 +24,7 @@ def matrix_divided(matrix, div):
 
     for item in range(len(new)):
         for i in range(len(new[item])):
-            new[item][i] = round(new[item][i] / 3, 2)
+            new[item][i] = round(new[item][i] / div, 2)
 
     return new
 
