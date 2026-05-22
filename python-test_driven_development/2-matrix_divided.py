@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This module provide
+This module provide all function used to divid a matrix by a given divider
 """
 
 
@@ -9,7 +9,7 @@ def matrix_divided(matrix, div):
         Divide the matrix by a given divider
 
         Args :
-            matrix : array 
+            matrix : array
             divider : int
         Returns:
             the matrix divided by the given divider
