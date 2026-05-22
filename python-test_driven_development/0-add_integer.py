@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+    This Module add the sum of two integer
+"""
+
+
 def add_integer(a, b=98):
     if not isinstance(a, (int, float)):
         raise TypeError("a must be an integer")
