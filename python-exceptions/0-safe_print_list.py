@@ -1,8 +1,11 @@
 #!/usr/bin/python3
 def safe_print_list(my_list=[], x=0):
-    try:
-        print("".join("{}".format(my_list[i]) for i in range(x)))
-        return x
-        pass
-    except Exception as e:
-        raise e
+    nb_print = 0
+    for i in range(x):
+        try:
+            print("{}".format(my_list[i]), end="")
+            nb_print += 1
+        except IndexError:
+            break
+    print()
+    return nb_print
