@@ -3,12 +3,12 @@
 >>> say_my_name("John", "Smith")
 My name is John Smith
 
->>> say_my_name(1, "Smith")
+>>> say_my_name(1, "Smith") # doctest: +ELLIPSIS
 Traceback (most recent call last):
 ...
-TypeError: first_name must be a string 
+TypeError: first_name must be a string
 
->>> say_my_name("John", 1)
+>>> say_my_name("John", 1) # doctest: +ELLIPSIS
 Traceback (most recent call last):
 ...
-TypeError: last_name must be a string 
+TypeError: last_name must be a string
