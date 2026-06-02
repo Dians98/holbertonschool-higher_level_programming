@@ -7,6 +7,7 @@ My name is John Smith
 Traceback (most recent call last):
     ...
 TypeError: first_name must be a string 
+
 >>> say_my_name("John", 1)
 Traceback (most recent call last):
     ...
