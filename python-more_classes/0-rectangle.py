@@ -9,7 +9,7 @@ class Rectangle:
     Class Rectangle
     """
 
-    def __init__(self, width=0, height):
+    def __init__(self, width=0, height=0):
         if not isinstance(width, int):
             raise TypeError("width must be an integer")
         if width < 0:
