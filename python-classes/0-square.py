@@ -4,7 +4,7 @@ This module is for an empty class that define square
 """
 
 
-class square:
+class Square:
     """
     Empty Class
     """
