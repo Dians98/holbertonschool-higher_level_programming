@@ -1,4 +1,4 @@
-# /user/bin/python3
+#!/usr/bin/python3
 """
 This modules provides a class to define a rectangle
 """
