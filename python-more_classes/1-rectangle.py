@@ -20,7 +20,7 @@ class Rectangle:
             raise TypeError("height must be an integer")
         if height < 0:
             raise ValueError("height must be >= 0")
-        self.height = height
+        self.__height = height
 
     @property
     def width(self):
@@ -44,4 +44,4 @@ class Rectangle:
             raise TypeError("height must be an integer")
         if height < 0:
             raise ValueError("height must be >= 0")
-        self.height = height
+        self.__height = height
