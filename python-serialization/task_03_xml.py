@@ -12,15 +12,13 @@ def serialize_to_xml(dictionary, filename):
         dictionary (dict): The dictionary containing data to serialize.
         filename (str): The destination file path.
     """
-    # 1. Create a root element
+
     root = ET.Element("data")
 
-    # 2. Iterate through dictionary items and add them as child elements
     for key, value in dictionary.items():
         child = ET.SubElement(root, key)
-        child.text = str(value)  # XML only stores data as text strings
+        child.text = str(value)
 
-    # 3. Write the XML tree to the file
     tree = ET.ElementTree(root)
     tree.write(filename, encoding="utf-8", xml_declaration=True)
 
@@ -35,17 +33,15 @@ def deserialize_from_xml(filename):
         dict: A dictionary reconstructed from the XML data.
     """
     try:
-        # 1. Parse the XML file
+
         tree = ET.parse(filename)
         root = tree.getroot()
 
         reconstructed_dict = {}
 
-        # 2. Navigate through the XML elements and recover basic data types
         for child in root:
             val = child.text
 
-            # Handle type conversion since XML treats everything as text strings
             if val is None:
                 val = ""
             elif val.lower() == "true":
@@ -54,13 +50,13 @@ def deserialize_from_xml(filename):
                 val = False
             else:
                 try:
-                    # Attempt numeric conversions
+
                     if "." in val:
                         val = float(val)
                     else:
                         val = int(val)
                 except ValueError:
-                    # Fallback to string if it cannot be parsed as a number
+
                     pass
 
             reconstructed_dict[child.tag] = val
