@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+This module is used for input/output exercices
+"""
+
+
 class Student:
     """Defines a student by their first name, last name, and age."""
 

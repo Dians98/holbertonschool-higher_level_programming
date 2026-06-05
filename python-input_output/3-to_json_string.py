@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+This module is used for input/output exercices
+"""
 import json
 
 
