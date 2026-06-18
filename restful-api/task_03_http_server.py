@@ -4,36 +4,35 @@ import json
 
 
 class HTTPServer_RequestHandler(BaseHTTPRequestHandler):
-
-    # GET
     def do_GET(self):
-        match(self.path):
-            case '/data':
-                self.send_response(200)
-                self.send_header("Content-Type", "application/json")
-                self.end_headers()
+        # Racine /
+        if self.path == '/':
+            self.send_response(200)
+            self.send_header("Content-type", "text/plain")
+            self.end_headers()
+            self.wfile.write("Hello, this is a simple API!".encode("utf-8"))
 
-                response = {"name": "John", "age": 30, "city": "New York"}
-                response_json = json.dumps(response)
-                self.wfile.write(response_json.encode("utf-8"))
+        # Endpoint /data
+        elif self.path == '/data':
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json")
+            self.end_headers()
+            response = {"name": "John", "age": 30, "city": "New York"}
+            self.wfile.write(json.dumps(response).encode("utf-8"))
 
-            case "/status":
-                self.send_response(200)
-                self.send_header("Content-Type", "application/json")
-                self.end_headers()
-                self.wfile.write(bytes("OK", "utf8"))
+        # Endpoint /status
+        elif self.path == '/status':
+            self.send_response(200)
+            self.send_header("Content-Type", "text/plain")
+            self.end_headers()
+            self.wfile.write("OK".encode("utf-8"))
 
-            case "/":
-                self.send_response(200)
-                self.send_header("Content-type", "application/json")
-                self.end_headers()
-                self.wfile.write(bytes("Hello, this is a simple API!", "utf8"))
-
-            case _:
-                self.send_response(404)
-                self.send_header("Content-type", "application/json")
-                self.end_headers()
-                self.wfile.write(bytes("Endpoint not found", "utf8"))
+        # Gestion des erreurs 404
+        else:
+            self.send_response(404)
+            self.send_header("Content-type", "text/plain")
+            self.end_headers()
+            self.wfile.write("Endpoint not found".encode("utf-8"))
 
 
 if __name__ == "__main__":
