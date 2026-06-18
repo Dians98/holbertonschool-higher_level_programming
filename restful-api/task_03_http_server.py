@@ -36,10 +36,9 @@ class HTTPServer_RequestHandler(BaseHTTPRequestHandler):
                 self.wfile.write(bytes("Endpoint not found", "utf8"))
 
 
-# configure server
-port = 8000
-server_address = ("127.0.0.1", port)
-httpd = HTTPServer(server_address, HTTPServer_RequestHandler)
-
-# run server
-httpd.serve_forever()
+if __name__ == "__main__":
+    port = 8000
+    server_address = ("127.0.0.1", port)
+    httpd = HTTPServer(server_address, HTTPServer_RequestHandler)
+    print(f"Starting server on port {port}...")
+    httpd.serve_forever()
