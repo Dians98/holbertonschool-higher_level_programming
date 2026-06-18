@@ -37,7 +37,7 @@ class HTTPServer_RequestHandler(BaseHTTPRequestHandler):
 
 
 # configure server
-port = 8080
+port = 8000
 server_address = ("127.0.0.1", port)
 httpd = HTTPServer(server_address, HTTPServer_RequestHandler)
 
