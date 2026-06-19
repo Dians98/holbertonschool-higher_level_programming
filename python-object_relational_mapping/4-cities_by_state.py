@@ -24,7 +24,7 @@ if __name__ == "__main__":
 
     cursor = db.cursor()
     cursor.execute(
-        "SELECT * FROM cities"
+        "SELECT * FROM cities ORDER BY cities.id ASC"
     )
     rows = cursor.fetchall()
 
