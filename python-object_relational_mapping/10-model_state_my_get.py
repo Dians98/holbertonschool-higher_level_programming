@@ -20,9 +20,11 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    states = session.query(State).order_by(
-        State.id).filter(State.name == state_name).all()
+    state = session.query(State).order_by(
+        State.id).filter(State.name == state_name).first()
 
-    for state in states:
-        print("{} {}".format(state_name, state.id if state.id else "not found"))
+    if state is None:
+        print("Not found")
+    else:
+        print(state.id)
     session.close()
