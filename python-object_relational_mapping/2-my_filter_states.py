@@ -24,8 +24,8 @@ if __name__ == "__main__":
     state_name = sys.argv[4]
     cursor = db.cursor()
     cursor.execute(
-        "SELECT * FROM states WHERE name LIKE BINARY %s ORDER BY states.id ASC",
-        (state_name + '%',)
+        "SELECT * FROM states WHERE name LIKE BINARY '{}%' ORDER BY states.id ASC".format(
+            state_name)
     )
     rows = cursor.fetchall()
 
