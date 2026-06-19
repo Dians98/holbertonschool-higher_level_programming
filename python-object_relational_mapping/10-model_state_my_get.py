@@ -24,5 +24,5 @@ if __name__ == "__main__":
         State.id).filter(State.name == state_name).all()
 
     for state in states:
-        print("{}: {}".format(state_name, state.id if state.id else "not found"))
+        print("{} {}".format(state_name, state.id if state.id else "not found"))
     session.close()
