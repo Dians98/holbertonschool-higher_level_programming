@@ -15,12 +15,12 @@ if __name__ == "__main__":
         pool_pre_ping=True
     )
 
-    state_name = sys.argv[4]
+    state_name = "Louisiana"
 
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    new_state = State(name="Louisiana")
+    new_state = State(name=state_name)
     session.add(new_state)
     session.commit()
 
