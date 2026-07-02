@@ -1,0 +1,8 @@
+{% include 'header.html' %}
+<ul>
+{% for item in items %}
+    <li><a href="{{ item }}">{{ item }}</a></li>
+{% endfor %}
+</ul>
+
+{% include 'footer.html' %}
